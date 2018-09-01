@@ -52,10 +52,10 @@ namespace stringCalcKata.Tests
             var sut = new StringCalc();        //SUT - system under tests
 
             //act
-            var result = sut.Add("1");
+            var result = sut.Add("1,2");
 
             //assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(3, result);
         }
     }
 }

@@ -14,8 +14,21 @@ namespace StringCatKata
             {
                 return 0;
              
-            } else
-            return int.Parse(input); ;
+            }
+            else
+            {
+                var arrayOfStrings = input.Split(',');
+                var arrayOfIntigers = new List<int>();
+                var sum = 0;
+                foreach (var element in arrayOfStrings)
+                {
+                    var number = int.Parse(element);
+                    arrayOfIntigers.Add(number);
+                    sum += number;
+                }
+
+                return sum;
+            }
 
 
 
