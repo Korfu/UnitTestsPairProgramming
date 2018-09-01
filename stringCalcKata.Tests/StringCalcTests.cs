@@ -159,5 +159,31 @@ namespace stringCalcKata.Tests
             //assert
             Assert.Throws<ArgumentException>(() => { sut.Add("-1\n2,-3");}, "negatives not allowed");
         }
+
+        [Test]
+        public void Add_numberMoreThen1k_returnsTheirSum()
+        {
+            //arrange
+            var sut = new StringCalc();        //SUT - system under tests
+
+            //act
+            var result = sut.Add("1000, 2");
+
+            //assert
+            Assert.AreEqual(2, result);
+        }
+
+        [Test]
+        public void Add_stringDelimiters_returnsSumOfAllNumbers()
+        {
+            //arrange
+            var sut = new StringCalc();        //SUT - system under tests
+
+            //act
+            var result = sut.Add("//[aaa]\n1aaa2aaa3");
+
+            //assert
+            Assert.AreEqual(6, result);
+        }
     }
 }

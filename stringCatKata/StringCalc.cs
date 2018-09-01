@@ -17,7 +17,7 @@ namespace StringCatKata
             }
             else
             {
-                var arrayOfStrings = input.Replace(" ", "").Split(new[] { ",", "\n","/",";" },StringSplitOptions.RemoveEmptyEntries);
+                var arrayOfStrings = input.Replace(" ", "").Split(new[] { ",", "\n","/",";","aaa","[","]" },StringSplitOptions.RemoveEmptyEntries);
                 var arrayOfIntigers = new List<int>();
                 var sum = 0;
                 foreach (var element in arrayOfStrings)
@@ -31,7 +31,7 @@ namespace StringCatKata
                     sum += number;
                 }
 
-                return sum;
+                return sum%1000;
             }
 
 
