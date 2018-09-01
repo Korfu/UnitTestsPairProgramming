@@ -10,7 +10,18 @@ namespace StringCatKata
     {
         public int Add(string input)
         {
-            return 42;
+            if(input=="")
+            {
+                return 0;
+            }
+            return 0;
+            //if (input == "")
+            //{
+            //    return 0;
+            //} else
+            //{
+            //    return int.Parse(input);
+            //}
         }
     }
 }
