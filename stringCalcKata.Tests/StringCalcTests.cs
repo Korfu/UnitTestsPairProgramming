@@ -68,7 +68,7 @@ namespace stringCalcKata.Tests
             var result = sut.Add("25,1452,22");
 
             //assert
-            Assert.AreEqual(1499, result);
+            Assert.AreEqual(499, result);
         }
         [Test]
         public void Add_fourNumbersDividedByComma_returnsTheirSum()
@@ -80,7 +80,7 @@ namespace stringCalcKata.Tests
             var result = sut.Add("25,1452,22,134234234");
 
             //assert
-            Assert.AreEqual(134235733, result);
+            Assert.AreEqual(733, result);
         }
 
         [Test]
@@ -181,6 +181,19 @@ namespace stringCalcKata.Tests
 
             //act
             var result = sut.Add("//[aaa]\n1aaa2aaa3");
+
+            //assert
+            Assert.AreEqual(6, result);
+        }
+
+        [Test]
+        public void Add_allCharsDelimiters_returnsSumOfAllNumbers()
+        {
+            //arrange
+            var sut = new StringCalc();        //SUT - system under tests
+
+            //act
+            var result = sut.Add("//[%][a]\n1%2a3");
 
             //assert
             Assert.AreEqual(6, result);

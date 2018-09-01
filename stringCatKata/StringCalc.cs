@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace StringCatKata
@@ -17,7 +18,9 @@ namespace StringCatKata
             }
             else
             {
-                var arrayOfStrings = input.Replace(" ", "").Split(new[] { ",", "\n","/",";","aaa","[","]" },StringSplitOptions.RemoveEmptyEntries);
+                var arrayOfStrings = input.Replace(" ", "")
+                                          .Split(new[] { ",", "\n","/",";","[","]","%","a" },StringSplitOptions.RemoveEmptyEntries);
+
                 var arrayOfIntigers = new List<int>();
                 var sum = 0;
                 foreach (var element in arrayOfStrings)
