@@ -17,12 +17,16 @@ namespace StringCatKata
             }
             else
             {
-                var arrayOfStrings = input.Split(',');
+                var arrayOfStrings = input.Replace(" ", "").Split(new[] { ",", "\n","/",";" },StringSplitOptions.RemoveEmptyEntries);
                 var arrayOfIntigers = new List<int>();
                 var sum = 0;
                 foreach (var element in arrayOfStrings)
                 {
                     var number = int.Parse(element);
+                    if (number < 0)
+                    {
+                        throw new ArgumentException("Numbers cannot be negative!");
+                    }
                     arrayOfIntigers.Add(number);
                     sum += number;
                 }

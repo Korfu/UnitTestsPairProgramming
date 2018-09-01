@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using StringCatKata;
+using System;
 
 namespace stringCalcKata.Tests
 {
@@ -82,5 +83,81 @@ namespace stringCalcKata.Tests
             Assert.AreEqual(134235733, result);
         }
 
+        [Test]
+        public void Add_addNumbersSeparatedByN_returnsTheirSum()
+        {
+            //arrange
+            var sut = new StringCalc();        //SUT - system under tests
+
+            //act
+            var result = sut.Add("1\n2,3");
+
+            //assert
+            Assert.AreEqual(6, result);
+        }
+
+        [Test]
+        public void Add_addDoubleSeprator_returnsTheirSum()
+        {
+            //arrange
+            var sut = new StringCalc();        //SUT - system under tests
+
+            //act
+            var result = sut.Add("1\n\n2,3");
+
+            //assert
+            Assert.AreEqual(6, result);
+        }
+
+        [Test]
+        public void Add_addDoubleSepratorWithSpaceInBetween_returnsTheirSum()
+        {
+            //arrange
+            var sut = new StringCalc();        //SUT - system under tests
+
+            //act
+            var result = sut.Add("1\n \n, 2,3");
+
+            //assert
+            Assert.AreEqual(6, result);
+        }
+
+        [Test]
+        public void Add_addDoubleSepratorWithManySpaceInBetween_returnsTheirSum()
+        {
+            //arrange
+            var sut = new StringCalc();        //SUT - system under tests
+
+            //act
+            var result = sut.Add("1\n                          \n, 2,3");
+
+            //assert
+            Assert.AreEqual(6, result);
+        }
+
+        [Test]
+        public void Add_diffSeparators_returnsTheirSum()
+        {
+            //arrange
+            var sut = new StringCalc();        //SUT - system under tests
+
+            //act
+            var result = sut.Add("//;\n1;2");
+
+            //assert
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
+        public void Add_negativeNumber_returnsException()
+        {
+            //arrange
+            var sut = new StringCalc();      
+
+            //act
+
+            //assert
+            Assert.Throws<ArgumentException>(() => { sut.Add("-1\n2,-3");}, "negatives not allowed");
+        }
     }
 }
