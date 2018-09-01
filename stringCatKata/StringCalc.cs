@@ -14,7 +14,6 @@ namespace StringCatKata
             if (input == "")
             {
                 return 0;
-             
             }
             else
             {
@@ -29,24 +28,14 @@ namespace StringCatKata
                     if (number < 0)
                     {
                         throw new ArgumentException("Numbers cannot be negative!");
+                    } else if (number < 1000)
+                    {
+                        arrayOfIntigers.Add(number);
+                        sum += number;
                     }
-                    arrayOfIntigers.Add(number);
-                    sum += number;
                 }
-
-                return sum%1000;
+                return sum;
             }
-
-
-
-
-            //if (input == "")
-            //{
-            //    return 0;
-            //} else
-            //{
-            //    return int.Parse(input);
-            //}
         }
     }
 }
