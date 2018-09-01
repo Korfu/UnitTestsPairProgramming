@@ -37,13 +37,13 @@ namespace stringCalcKata.Tests
         public void Add_singleNumberInput_returnNumber()
         {
             //arrange
-            var sut = new StringCalc();        //SUT - system under tests
+            var sut = new StringCalc();
 
             //act
-            var result = sut.Add("1");
+            var result = sut.Add("5");
 
             //assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(5, result);
         }
         [Test]
         public void Add_twoNumbersSeparatedByComma_returnsTheirSum()
