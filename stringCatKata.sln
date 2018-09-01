@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stringCatKata", "stringCatKata\stringCatKata.csproj", "{4DAE13C7-FFA8-4341-AA6E-4EF62329D94D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringCalcKata", "stringCatKata\StringCalcKata.csproj", "{4DAE13C7-FFA8-4341-AA6E-4EF62329D94D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stringCalcKata.Tests", "stringCalcKata.Tests\stringCalcKata.Tests.csproj", "{733D669B-B72D-4F8F-8A52-4B73271B55CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4DAE13C7-FFA8-4341-AA6E-4EF62329D94D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DAE13C7-FFA8-4341-AA6E-4EF62329D94D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DAE13C7-FFA8-4341-AA6E-4EF62329D94D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{733D669B-B72D-4F8F-8A52-4B73271B55CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{733D669B-B72D-4F8F-8A52-4B73271B55CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{733D669B-B72D-4F8F-8A52-4B73271B55CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{733D669B-B72D-4F8F-8A52-4B73271B55CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
