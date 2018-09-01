@@ -24,7 +24,7 @@ namespace stringCalcKata.Tests
         public void Add_oneInInput_returnOne()
         {
             //arrange
-            var sut = new StringCalc();        //SUT - system under tests
+            var sut = new StringCalc();  
 
             //act
             var result = sut.Add("1");

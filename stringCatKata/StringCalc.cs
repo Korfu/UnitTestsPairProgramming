@@ -10,11 +10,15 @@ namespace StringCatKata
     {
         public int Add(string input)
         {
-            if(input=="")
+            if (input == "1")
             {
-                return 0;
-            }
-            return 0;
+                return 1;
+            } else 
+             return 0;
+
+
+
+
             //if (input == "")
             //{
             //    return 0;
