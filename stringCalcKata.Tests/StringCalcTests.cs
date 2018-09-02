@@ -16,7 +16,6 @@ namespace stringCalcKata.Tests
             //act
             var result = sut.Add("");
 
-
             //assert
             Assert.AreEqual(0, result);
         }

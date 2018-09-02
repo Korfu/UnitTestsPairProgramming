@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StringCatKata
 {
@@ -23,17 +24,15 @@ namespace StringCatKata
             var arrayOfStrings = input.Replace(" ", "")
                                        .Split(separators.ToArray(), StringSplitOptions.RemoveEmptyEntries);
 
-            var arrayOfIntigers = new List<int>();
+            var arrayOfIntigers = arrayOfStrings.Select(x => int.Parse(x));
             var sum = 0;
-            foreach (var element in arrayOfStrings)
+            foreach (var number in arrayOfIntigers)
             {
-                var number = int.Parse(element);
                 if (number < 0)
                 {
                     throw new ArgumentException($"Numbers such as {number} cannot be negative!");
                 } else if (number < 1000)
                 {
-                    arrayOfIntigers.Add(number);
                     sum += number;
                 }
             }

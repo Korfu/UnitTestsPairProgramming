@@ -8,7 +8,7 @@ namespace stringCalcKata
         public static void Main(string[] args)
         {
             var sut = new StringCalc();
-            sut.Add("//x\n1;x2");
+            sut.Add("//a\n1;x2");
             Console.ReadLine();
         }
     }
