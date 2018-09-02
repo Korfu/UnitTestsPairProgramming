@@ -8,8 +8,7 @@ namespace StringCatKata
     {
         public int Add(string input)
         {
-            var separators = new List<string>(){ ",", "\n", "/", ";", "[", "]", "%", "a" };
-
+            var separators = new List<string>(){ ",", "\n", "/", ";", "[", "]", "%", "a","x" };
             for (var i = 0; i< input.Length - 1; i++)
             {
                 if (input[i] == '\\')
@@ -20,22 +19,16 @@ namespace StringCatKata
                 }
                 Console.WriteLine(input[i] + " " + input[i + 1]);
             }
-
             var arrayOfStrings = input.Replace(" ", "")
                                        .Split(separators.ToArray(), StringSplitOptions.RemoveEmptyEntries);
 
-            var arrayOfIntigers = arrayOfStrings.Select(x => int.Parse(x));
-            var sum = 0;
-            foreach (var number in arrayOfIntigers)
+            var arrayOfIntigers = arrayOfStrings.Select(x => int.Parse(x)).ToArray();
+            var negativeNumbers = arrayOfIntigers.Where(n => n < 0).ToArray();
+            if (negativeNumbers.Any())
             {
-                if (number < 0)
-                {
-                    throw new ArgumentException($"Numbers such as {number} cannot be negative!");
-                } else if (number < 1000)
-                {
-                    sum += number;
-                }
+                throw new ArgumentException($"Numbers such as {negativeNumbers.First()}cannot be negative!");
             }
+            var sum = arrayOfIntigers.Where(n => n < 1000).Sum();
             return sum;
         }
     }
