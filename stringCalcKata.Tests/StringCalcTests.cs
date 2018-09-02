@@ -149,6 +149,19 @@ namespace stringCalcKata.Tests
         }
 
         [Test]
+        public void Add_varSeparator_ShouldAcknowledgeIt()
+        {
+            //arrange
+            var sut = new StringCalc();        //SUT - system under tests
+
+            //act
+            var result = sut.Add("//x\n1;x2");
+
+            //assert
+            Assert.AreEqual(3, result);
+        }
+
+        [Test]
         public void Add_negativeNumber_returnsException()
         {
             //arrange
@@ -174,7 +187,7 @@ namespace stringCalcKata.Tests
         }
 
         [Test]
-        public void xxx()
+        public void Add_Over1kNumber_skipOVer1K()
         {
             //arrange
             var sut = new StringCalc();        //SUT - system under tests

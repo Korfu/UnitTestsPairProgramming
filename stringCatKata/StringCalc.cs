@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace StringCatKata
 {
@@ -11,31 +7,37 @@ namespace StringCatKata
     {
         public int Add(string input)
         {
-            if (input == "")
-            {
-                return 0;
-            }
-            else
-            {
-                var arrayOfStrings = input.Replace(" ", "")
-                                          .Split(new[] { ",", "\n","/",";","[","]","%","a" },StringSplitOptions.RemoveEmptyEntries);
+            var separators = new List<string>(){ ",", "\n", "/", ";", "[", "]", "%", "a" };
 
-                var arrayOfIntigers = new List<int>();
-                var sum = 0;
-                foreach (var element in arrayOfStrings)
+            for (var i = 0; i< input.Length - 1; i++)
+            {
+                if (input[i] == '\\')
                 {
-                    var number = int.Parse(element);
-                    if (number < 0)
-                    {
-                        throw new ArgumentException("Numbers cannot be negative!");
-                    } else if (number < 1000)
-                    {
-                        arrayOfIntigers.Add(number);
-                        sum += number;
-                    }
+                    Console.WriteLine(input[i+1].ToString());
+                    string newDelimiter = input[i + 1].ToString();
+                    separators.Add(newDelimiter);
                 }
-                return sum;
+                Console.WriteLine(input[i] + " " + input[i + 1]);
             }
+
+            var arrayOfStrings = input.Replace(" ", "")
+                                       .Split(separators.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+
+            var arrayOfIntigers = new List<int>();
+            var sum = 0;
+            foreach (var element in arrayOfStrings)
+            {
+                var number = int.Parse(element);
+                if (number < 0)
+                {
+                    throw new ArgumentException($"Numbers such as {number} cannot be negative!");
+                } else if (number < 1000)
+                {
+                    arrayOfIntigers.Add(number);
+                    sum += number;
+                }
+            }
+            return sum;
         }
     }
 }

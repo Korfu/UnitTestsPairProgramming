@@ -1,10 +1,15 @@
-﻿namespace stringCalcKata
+﻿using StringCatKata;
+using System;
+
+namespace stringCalcKata
 {
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-
+            var sut = new StringCalc();
+            sut.Add("//x\n1;x2");
+            Console.ReadLine();
         }
     }
 }
